@@ -1,0 +1,12 @@
+
+
+<div>
+  <h3><%= @post.title %></h3>
+  <%= image_tag @post.image.url(:medium) if @post.image.present? %>
+</div>
+<div>
+  <%= link_to "Back", posts_path %>
+  <%= link_to "Delete", post_path(@post), method: :delete %>
+</div>
+
+<!-- post here has an @ because it refers to a specific post -->

@@ -1,0 +1,16 @@
+<h1>
+  Posts Index
+</h1>
+
+<%= link_to "New Post",new_post_path %>
+
+<% @posts.each do |post| %>
+  <div>
+    <h3><%= post.title %></h3>
+    <%= image_tag post.image.url(:medium) if post.image.present? %>
+    <br>
+    <%= link_to "View", post_path(post) %>
+  </div>
+<% end %>
+
+<!-- post here is a variable and doesnt have @ because its within the .each loop -->
